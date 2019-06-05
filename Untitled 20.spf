@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>czpt</string>
+			<key>host</key>
+			<string>39.105.123.25</string>
+			<key>kcid</key>
+			<string>-1922440723024058474</string>
+			<key>name</key>
+			<string>91库存</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8mb4</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClJpZNIeHy0uXxAPTlNN
+			dXRhYmxlU3RyaW5noy0vI1hOU1N0cmluZ9IeHzEyXk5TTXV0YWJs
+			ZUFycmF5ozEzI1dOU0FycmF50h4fIjWiIiNfEA9OU0tleWVkQXJj
+			aGl2ZXLRODlUZGF0YYABAAgAEQAaACMALQAyADcARQBLAFIAWgBl
+			AGwAcAByAHQAdgB6AHwAfgCAAIIAhwCMAJEAugDBAMIAwwDFAMoA
+			1QDeAPQA+AEFAQ4BEwEVARcBGQEeASgBKgEtATIBRAFIAVEBVgFl
+			AWkBcQF2AXkBiwGOAZMAAAAAAAACAQAAAAAAAAA6AAAAAAAAAAAA
+			AAAAAAABlQ==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{1, 0}, {1225, 670}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>CREATE TABLE `cz_store` (
+  `id` int(11) , 
+  `price` int(11) unsigned NOT NULL COMMENT '公告ID',
+  `localizedTitle` varchar(255) NOT NULL COMMENT '公告标题',
+  `localizedDescription` tinyint(1) NOT NULL COMMENT '公告状态 1 启用 2 禁用',
+  `game_id` text NOT NULL COMMENT '公告详情',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;</string>
+			<key>table</key>
+			<string>cz_store</string>
+			<key>view</key>
+			<string>SP_VIEW_CONTENT</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>SELECT * FROM `cz_store` WHERE `price_id` = 1 AND `user_id` = 5 ORDER BY id asc LIMIT 1</string>
+		<string>CREATE TABLE `cz_store_price` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `gs_id` decimal(10,2) unsigned NOT NULL COMMENT '面值',
+  `money` varchar(128) NOT NULL DEFAULT '' COMMENT '人民币',
+  `gold` varchar(256) NOT NULL DEFAULT '' COMMENT '游戏币',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态 0无效 1有效',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4</string>
+		<string>UPDATE `cz_user`  SET `money`=`money`+121.00  WHERE  `id` = 1</string>
+		<string>CREATE TABLE `cz_store` (
+  `id` int(11) , 
+  `price` int(11) unsigned NOT NULL COMMENT '公告ID',
+  `localizedTitle` varchar(255) NOT NULL COMMENT '公告标题',
+  `localizedDescription` tinyint(1) NOT NULL COMMENT '公告状态 1 启用 2 禁用',
+  `game_id` text NOT NULL COMMENT '公告详情',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4</string>
+		<string>CREATE TABLE `cz_store` (
+  `id` int(11) , 
+  `price` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '公告ID',
+  `localizedTitle` varchar(255) NOT NULL COMMENT '公告标题',
+  `localizedDescription` tinyint(1) NOT NULL COMMENT '公告状态 1 启用 2 禁用',
+  `game_id` text NOT NULL COMMENT '公告详情',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4</string>
+		<string>CREATE TABLE `cz_store` (
+  `id` int(11) , 
+  `price` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '公告ID',
+  `localizedTitle` varchar(255) NOT NULL COMMENT '公告标题',
+  `localizedDescription` tinyint(1) NOT NULL COMMENT '公告状态 1 启用 2 禁用',
+  `game_id` text NOT NULL COMMENT '公告详情',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4</string>
+		<string>CREATE TABLE `cz_store` (
+`id` int(11) , 
+  `price` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '公告ID',
+  `localizedTitle` varchar(255) NOT NULL COMMENT '公告标题',
+  `localizedDescription` tinyint(1) NOT NULL COMMENT '公告状态 1 启用 2 禁用',
+  `game_id` text NOT NULL COMMENT '公告详情',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4</string>
+		<string>CREATE TABLE `cz_token` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '令牌编号',
+  `token` varchar(50) NOT NULL COMMENT '登录令牌',
+  `user_id` int(10) unsigned NOT NULL COMMENT '用户编号',
+  `user_name` varchar(50) NOT NULL COMMENT '用户名',
+  `ip` varchar(32) DEFAULT NULL COMMENT '登录IP',
+  `client` varchar(10) NOT NULL DEFAULT '' COMMENT '客户端类型 android ios wap',
+  `version` varchar(32) DEFAULT NULL COMMENT '客户端版本',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `sort` int(3) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '0管理员删除 1有效 2用户删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COMMENT='移动端登录令牌表'</string>
+		<string>CREATE TABLE `cz_token` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '令牌编号',
+  `token` varchar(50) NOT NULL COMMENT '登录令牌',
+  `user_id` int(10) unsigned NOT NULL COMMENT '用户编号',
+  `user_name` varchar(50) NOT NULL COMMENT '用户名',
+  `ip` varchar(32) DEFAULT NULL COMMENT '登录IP',
+  `client` varchar(10) NOT NULL DEFAULT '' COMMENT '客户端类型 android ios wap',
+  `version` varchar(32) DEFAULT NULL COMMENT '客户端版本',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `sort` int(3) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '0管理员删除 1有效 2用户删除'
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COMMENT='移动端登录令牌表'</string>
+		<string>CREATE TABLE `tips` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '记录ID',
+  `content` varchar(1024) DEFAULT NULL COMMENT '值',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
+  `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `memo` varchar(512) DEFAULT NULL COMMENT '备注',
+  `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  `area_id` int(11) NOT NULL COMMENT '地区ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='提示语表'</string>
+		<string>SELECT * FROM `os_order` WHERE  `status` = 10  AND `peeping` = 1  AND `updatetime` &gt;= '2018-05-29 16:17:32' ORDER BY RAND() LIMIT 0,10</string>
+		<string>SELECT * FROM `os_order` WHERE  `status` = 10  AND `peeping` = 1  AND `updatetime` &gt;= '2018-05-29 16:17:32' ORDER BY RAND() LIMIT 0,1</string>
+		<string>SELECT * FROM `os_order` WHERE  `status` = 10  AND `peeping` = 1  AND `updatetime` &gt;= '2018-05-29 16:17:32' ORDER BY RAND() LIMIT 1</string>
+		<string>CREATE TABLE `os_order_peep` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `createtime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=673 DEFAULT CHARSET=utf8 COMMENT='语音视频偷瞄记录表'</string>
+		<string>SELECT COUNT(*) AS tp_count FROM `user` WHERE ( `province_id` = 108 OR `city_id` = 108 OR `area_id` = 108 ) AND UNIX_TIMESTAMP(create_time) BETWEEN 1526572800 AND 1526572800 LIMIT 1</string>
+		<string>update os_addr_log set status=2 where status=0</string>
+		<string>SELECT * FROM `os_radio` WHERE  `end` &gt;= '2018-05-12 23:03:00'  AND `status` = 1 ORDER BY `start`  asc LIMIT 0,15</string>
+		<string>SELECT * FROM `os_radio` WHERE  `start` &gt;= '2018-05-12 23:03:00'  AND `status` = 1 ORDER BY `start`  asc LIMIT 0,15</string>
+		<string>INSERT INTO `os_system` (`id`, `name`, `value`, `memo`)
+VALUES
+	(1, 'site_config', 'a:7:{s:10:\"site_title\";s:28:\"百香果-后台管理系统\";s:9:\"seo_title\";s:0:\"\";s:11:\"seo_keyword\";s:0:\"\";s:15:\"seo_description\";s:0:\"\";s:14:\"site_copyright\";s:0:\"\";s:8:\"site_icp\";s:0:\"\";s:11:\"site_tongji\";s:0:\"\";}', '')</string>
+		<string>CREATE TABLE `os_device_type` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) NOT NULL DEFAULT '' COMMENT '名称',
+  `createtime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '反馈时间',
+  `updatetime` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '阅读时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='意见反馈'</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.6.40-log</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

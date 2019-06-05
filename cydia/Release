@@ -1,0 +1,8 @@
+Origin:test
+Label:test
+Suite:stable
+Version:1.0
+Codename:text
+Architectures:iphoneos-arm
+Components:main
+Description:软件源测试

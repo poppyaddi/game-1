@@ -1,0 +1,57 @@
+{include file="/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div>
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>账户余额</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="commentForm" method="post" onsubmit="return toVaild()">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">账户编号：</label>
+                            <div class="input-group col-sm-5">
+                                <input type="text" class="form-control"  required="" aria-required="true" value="{$user.id}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">账户名称：</label>
+                            <div class="input-group col-sm-5">
+                                <input type="text" class="form-control" name="" required="" aria-required="true" value="{$user.username}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">到期时间：</label>
+                            <div class="input-group col-sm-5">
+                                <input type="text" class="form-control" name="" required="" aria-required="true" value="{$user.end_time}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">账户余额：</label>
+                            <div class="input-group col-sm-5">
+                                <input type="text" class="form-control" name=""  aria-required="true" value="{$user.money}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">冻结金额：</label>
+                            <div class="input-group col-sm-5">
+                                <input type="text" class="form-control" name=""  aria-required="true" value="{$user.fro_money}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">账户状态：</label>
+                            <div class="input-group col-sm-5">
+                                <input type="text" class="form-control" name=""  aria-required="true" value="有效" readonly>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{include file="/footer" /}
+</body>
+</html>

@@ -1,0 +1,480 @@
+{include file="/header" /}
+<body class="gray-bg">
+<style type="text/css">
+    .sm-st {
+        background:#fff;
+        padding:20px;
+        -webkit-border-radius:3px;
+        -moz-border-radius:3px;
+        border-radius:3px;
+        margin-bottom:20px;
+        -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+    }
+    .sm-st-icon {
+        width:60px;
+        height:60px;
+        display:inline-block;
+        line-height:60px;
+        text-align:center;
+        font-size:30px;
+        background:#eee;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        float:left;
+        margin-right:10px;
+        color:#fff;
+    }
+    .sm-st-info {
+        font-size:20px;
+        margin:5px;
+    }
+
+    .st-red {
+        background-color: #F05050;
+    }
+    .st-green {
+        background-color: #27C24C;
+    }
+    .st-violet {
+        background-color: #7266ba;
+    }
+    .st-blue {
+        background-color: #23b7e5;
+    }
+
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>网站信息</h5>
+            <div class="ibox-tools">
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="ibox-content">
+            <div class="panel panel-default panel-intro">
+                <div class="panel-body">
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="one">
+                            <input type="hidden" id="firstLogin" value="{$data.status}">
+                            <!--<div class="row">-->
+                                <!--<div class="col-sm-2 col-xs-5">-->
+                                    <!--<div class="sm-st clearfix">-->
+                                        <!--<span class="sm-st-icon st-red"><i class="fa fa-users"></i></span>-->
+                                        <!--<div class="sm-st-info">-->
+                                            <!--<span><b>{$data.user}</b></span><br>-->
+                                            <!--<span style="font-size: 15px">{$data.total}</span>-->
+                                            <!--&lt;!&ndash;总人数&ndash;&gt;-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-sm-2 col-xs-5">-->
+                                    <!--<div class="sm-st clearfix">-->
+                                        <!--<span class="sm-st-icon st-green"><i class="fa fa-pie-chart"></i></span>-->
+                                        <!--<div class="sm-st-info">-->
+                                            <!--<span><b>{$data.stock_nums}</b></span><br>-->
+                                            <!--<span style="font-size: 15px">{$data.stock_num}</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-sm-2 col-xs-5">-->
+                                    <!--<div class="sm-st clearfix">-->
+                                        <!--<span class="sm-st-icon st-violet"><i class="fa fa-book"></i></span>-->
+                                        <!--<div class="sm-st-info">-->
+                                            <!--<span><b>{$data.stock}</b></span><br>-->
+                                            <!--<span style="font-size: 15px">{$data.stocks}</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-sm-2 col-xs-5">-->
+                                    <!--<div class="sm-st clearfix">-->
+                                        <!--<span class="sm-st-icon st-blue"><i class="fa fa-shopping-bag"></i></span>-->
+                                        <!--<div class="sm-st-info">-->
+                                            <!--<span><b>{$data.order}</b></span><br>-->
+                                            <!--<span style="font-size: 15px">{$data.trans}</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-sm-2 col-xs-5">-->
+                                    <!--<div class="sm-st clearfix">-->
+                                        <!--<span class="sm-st-icon st-red"><i class="fa fa-yelp"></i></span>-->
+                                        <!--<div class="sm-st-info">-->
+                                            <!--<span><b>{$data.order_nums}</b></span><br>-->
+                                            <!--<span style="font-size: 15px">{$data.orders}</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-sm-2 col-xs-5">-->
+                                    <!--<div class="sm-st clearfix">-->
+                                        <!--<span class="sm-st-icon st-green"><i class="fa fa-cny"></i></span>-->
+                                        <!--<div class="sm-st-info">-->
+                                            <!--<span><b>{$data.money}</b></span><br>-->
+                                            <!--<span style="font-size: 15px">{$data.assets}</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="box box-danger">
+                                        <div class="box-header">
+                                            <h3 class="box-title" style="color: red">库存信息</h3>
+                                        </div>
+                                        <div class="example-wrap">
+                                            <div class="example">
+                                                <div class="bootstrap-table">
+                                                    <div class="fixed-table-container"
+                                                         style=" padding-bottom: 36px;">
+                                                        <div class="fixed-table-body">
+                                                            <table id="cusTable" data-height="700"
+                                                                   class="table table-hover table-striped">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner " style="color: red">库存数量</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner " style="color: red">库存价值</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner " style="color: red">订单数量</div>
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tr>
+                                                                    <tr data-index="0">
+                                                                        <td style="text-align: center;color: red">{$data.stock_nums}</td>
+                                                                        <td style="text-align: center;color: red">{$data.stock}</td>
+                                                                        <td style="text-align: center;color: red">{$data.order_nums}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                      <!--
+                                <div class="col-lg-6">
+                                    <div class="box box-danger">
+                                        <div class="box-header">
+                                            <h3 class="box-title" style="color: red">资产信息</h3>
+                                        </div>
+                                        <div class="example-wrap">
+                                            <div class="example">
+                                                <div class="bootstrap-table">
+                                                    <div class="fixed-table-container"
+                                                         style=" padding-bottom: 36px;">
+                                                        <div class="fixed-table-body">
+                                                            <table id="cusTable" data-height="700"
+                                                                   class="table table-hover table-striped">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner " style="color: red">{$data.total}</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner " style="color: red">出售总额</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner " style="color: red">冻结金额</div>
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tr>
+                                                                    <tr data-index="0">
+                                                                        <td style="text-align: center;color: red">{$data.user}</td>
+                                                                        <td style="text-align: center;color: red">{$data.order}</td>
+                                                                        <td style="text-align: center;color: red">{$data.money}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+-->
+                                <div class="col-lg-6">
+                                    <div class="box box-danger">
+                                        <div class="box-header">
+                                            <h3 class="box-title">入库统计</h3>
+                                        </div>
+                                        <div class="example-wrap">
+                                            <div class="example">
+                                                <div class="bootstrap-table">
+                                                    <div class="fixed-table-container"
+                                                         style="height: 450px; padding-bottom: 36px;">
+                                                        <div class="fixed-table-body">
+                                                            <table id="cusTable" data-height="700"
+                                                                   class="table table-hover table-striped">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">入库时间</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">入库金额</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">入库次数</div>
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                {empty name="data.notice"}
+                                                                <tr align="center">
+                                                                    <td colspan=8>暂时没有数据，请重新操作……</td>
+                                                                </tr>
+                                                                {/empty} {foreach name="data.stock_info" item="vo"}
+                                                                    <tr data-index="0">
+                                                                        <td style="text-align: center">{$vo.days}</td>
+                                                                        <td style="text-align: center">{$vo.day_sum}</td>
+                                                                        <td style="text-align: center">{$vo.day_count}</td>
+                                                                    </tr>
+                                                                {/foreach}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                      <!--
+                                <div class="col-lg-6">
+                                    <div class="box box-danger">
+                                        <div class="box-header">
+                                            <h3 class="box-title">交易动态</h3>
+                                        </div>
+                                        <div class="example-wrap">
+                                            <div class="example">
+                                                <div class="bootstrap-table">
+                                                    <div class="fixed-table-container"
+                                                         style="height: 450px; padding-bottom: 36px;">
+                                                        <div class="fixed-table-body">
+                                                            <table id="cusTable" data-height="700"
+                                                                   class="table table-hover table-striped">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">交易用户</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">交易金额</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">交易时间</div>
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                {empty name="data.notice"}
+                                                                <tr align="center">
+                                                                    <td colspan=8>暂时没有数据，请重新操作……</td>
+                                                                </tr>
+                                                                {/empty} {foreach name="data.order_info" item="vo"}
+                                                                    <tr data-index="0">
+                                                                        <td style="text-align: center">{$vo.sell_uid}</td>
+                                                                        <td style="text-align: center">{$vo.trans_total}</td>
+                                                                        <td style="text-align: center">{$vo.created_at}</td>
+                                                                    </tr>
+                                                                {/foreach}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+-->
+                                <div class="col-lg-6">
+                                    <div class="box box-danger">
+                                        <div class="box-header">
+                                            <h3 class="box-title">最新公告</h3>
+                                        </div>
+                                        <div class="example-wrap">
+                                            <div class="example">
+                                                <div class="bootstrap-table">
+                                                    <div class="fixed-table-container"
+                                                         style="height: 450px; padding-bottom: 36px;">
+                                                        <div class="fixed-table-body">
+                                                            <table id="cusTable" data-height="700"
+                                                                   class="table table-hover table-striped">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">公告标题</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">发布时间</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">操作</div>
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                {empty name="data.notice"}
+                                                                <tr align="center">
+                                                                    <td colspan=8>暂时没有数据，请重新操作……</td>
+                                                                </tr>
+                                                                {/empty} {foreach name="data.notice" item="vo"}
+                                                                    <tr data-index="0">
+                                                                        <td style="text-align: center">{$vo.ne_name}</td>
+                                                                        <td style="text-align: center">{$vo.created_at}</td>
+                                                                        <td style="text-align: center">
+                                                                            <button class="btn btn-primary btn-sm ">
+                                                                                <span style="color: white" onclick="noticeWeb({$vo.ne_id})">查看详情</span>
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                {/foreach}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="box box-danger">
+                                        <div class="box-header">
+                                            <h3 class="box-title">使用帮助</h3>
+                                        </div>
+                                        <div class="example-wrap">
+                                            <div class="example">
+                                                <div class="bootstrap-table">
+                                                    <div class="fixed-table-container"
+                                                         style="height: 450px; padding-bottom: 36px;">
+                                                        <div class="fixed-table-body">
+                                                            <table data-height="700"
+                                                                   class="table table-hover table-striped">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">帮助标题</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">发布时间</div>
+                                                                    </th>
+                                                                    <th tabindex="0" style="text-align: center">
+                                                                        <div class="th-inner ">操作</div>
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                {empty name="data.help"}
+                                                                <tr align="center">
+                                                                    <td colspan=8>暂时没有数据，请重新操作……</td>
+                                                                </tr>
+                                                                {/empty} {foreach name="data.help" item="vo"}
+                                                                <tr data-index="0">
+                                                                    <td style="text-align: center">{$vo.hp_name}</td>
+                                                                    <td style="text-align: center">{$vo.created_at}</td>
+                                                                    <td style="text-align: center">
+                                                                        <button class="btn btn-primary btn-sm ">
+                                                                            <span style="color: white" onclick="helpWeb({$vo.hp_id})">查看详情</span>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                {/foreach}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{include file="/footer" /}
+<script>
+    /**
+     * 公告web页
+     * @param id
+     */
+    function noticeWeb(id){
+        layer.open({
+            type: 2,
+            title: false,
+            shadeClose: true,
+            shade: false,
+            area: ['50%', '85%'],
+            btn: ['关闭'],
+            content: ['./noticeWeb?ne_id='+id], //iframe的url，no代表不显示滚动条
+        });
+    }
+
+    /**
+     * 帮助web页
+     * @param id
+     */
+    function helpWeb(id){
+        layer.open({
+            type: 2,
+            title: false,
+            shadeClose: true,
+            shade: false,
+            area: ['50%', '85%'],
+            btn: ['关闭'],
+            content: ['./helpWeb?hp_id='+id], //iframe的url，no代表不显示滚动条
+        });
+    }
+
+    //是否首次登陆
+    // var status = $('#firstLogin').val();
+    // if (status == 1){
+    //     layer.open({
+    //         type: 2,
+    //         title: false,
+    //         shadeClose: true,
+    //         shade: false,
+    //         area: ['50%', '85%'],
+    //         btn: ['关闭'],
+    //         content: ['./firstWeb'], //iframe的url，no代表不显示滚动条
+    //         cancel: function(){
+    //             //右上角关闭回调
+    //             $.post("firstLogin",{},function(result){
+    //                if (result.code == 1){
+    //                    layer.msg(result.msg);
+    //                }
+    //             });
+    //         }
+    //     });
+    // }
+    layer.msg('欢迎登陆库存管理平台');
+</script>
